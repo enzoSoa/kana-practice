@@ -1,0 +1,110 @@
+@keyframes bg-slide {
+	0% {
+		background-position: -200px 200px;
+	}
+
+	25% {
+		background-position: 200px -150px;
+	}
+
+	50% {
+		background-position: 300px 150px;
+	}
+
+	75% {
+		background-position: 250px -150px;
+	}
+
+	100% {
+		background-position: -200px 200px;
+	}
+}
+
+@keyframes slide-in {
+	from {
+		translate: 150vw 10vh;
+		rotate: 45deg;
+	}
+	to {
+		translate: 0 0;
+		rotate: 0; 
+	}
+}
+
+.card {
+	width: min(100%, 300px);
+	aspect-ratio: 2/3;
+	border-radius: 8px;
+	background: linear-gradient(to bottom,
+			var(--primary-medium) 1px,
+			transparent 2px), linear-gradient(to left,
+			var(--primary-medium) 1px,
+			transparent 2px), var(--primary-light);
+	background-size: 15px 15px;
+	border: 2px dashed var(--primary-medium);
+	display: flex;
+	align-items: center;
+	animation: 0.3s ease-out slide-in, 60s ease-in-out infinite bg-slide;
+	padding: 8px;
+
+	&.card--completed {
+		transition: all 0.3s;
+		translate: -150vw -10vh;
+		rotate: -45deg;
+	}
+}
+
+
+.card__form {
+	width: 100%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: var(--primary-light);
+	border: 2px dashed var(--primary-medium);
+	padding: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 16px
+}
+
+.card__kana {
+	font-size: 2.5rem;
+	font-weight: 900;
+	filter: drop-shadow(2px 2px var(--primary-dark));
+	color: var(--primary-medium);
+}
+
+.card__footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 4px;
+}
+
+.card__label {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	font-size: 0.8rem;
+	font-weight: 700;
+	filter: drop-shadow(1px 1px var(--primary-dark));
+	color: var(--primary-medium);
+}
+
+.card__input {
+	--font-size: 1rem;
+	font-size: var(--font-size);
+	font-weight: 700;
+	width: calc(var(--font-size) * 3);
+	border-radius: 8px;
+	text-align: center;
+	padding: 4px 8px;
+	background: transparent;
+	border: 2px dashed var(--primary-medium);
+	outline: none;
+	caret-color: var(--primary-medium);
+	z-index: 1;
+}

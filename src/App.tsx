@@ -1,4 +1,5 @@
 import { useState, useReducer } from 'react'
+import { Card } from './components'
 import './App.css'
 
 const hiraganaToRomanji = {
@@ -59,47 +60,9 @@ function randomIndexSelector(_, dispatchedEvent) {
 }
 
 function App() {
-  const [kana, setKana] = useState<string>('');
   const [{selectedIndex}, dispatch] = useReducer(randomIndexSelector, {selectedIndex:Math.floor(Math.random()*hiraganas.length)});
 
-
-  return (
-    <div className='question-card'> 
-      <div className='question-card__hover-detector'>
-        <div className='question-card__hover-detector__top-left'/>
-        <div className='question-card__hover-detector__top'/>
-        <div className='question-card__hover-detector__top-right'/>
-        <div className='question-card__hover-detector__left'/>
-        <div/>
-        <div className='question-card__hover-detector__right'/>
-        <div className='question-card__hover-detector__bottom-left'/>
-        <div className='question-card__hover-detector__bottom'/>
-        <div className='question-card__hover-detector__bottom-right'/>
-      </div>
-      <form 
-        className='question-card__form'
-        onSubmit={(e) => {
-          e.preventDefault();
-          if(kana === hiraganaToRomanji[hiraganas[selectedIndex]])
-          dispatch('randomizeIndex')
-        }}
-      >
-        <span className='question-card__kana'>
-          {hiraganas[selectedIndex]}
-        </span>
-        <div className='question-card__footer'>
-          <input 
-            className='question-card__input'
-            maxLength={3}
-            onChange={(v) => setKana(v.currentTarget.value)}
-          />
-          <span className='question-card__label'>
-            romaji ?
-          </span>
-        </div>
-      </form>
-    </div>
-  )
+  return <Card kata={hiraganas[selectedIndex]} target={hiraganaToRomanji[hiraganas[selectedIndex]]} onGoodGuess={() => setTimeout(() => dispatch('randomizeIndex'), 300)}/>
 }
 
 export default App
