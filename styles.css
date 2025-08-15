@@ -13,6 +13,48 @@ body {
 	background: var(--secondary-medium);
 }
 
+#background {
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	user-select: none;
+}
+
+.background-pattern {
+	position: absolute;
+	top: 0vh;
+	left: 0vw;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+
+	:nth-child(2n) {
+		animation-direction: reverse;
+	}
+}
+
+@keyframes scrolling-text {
+	from {
+		translate: 0 0;
+	}
+	to {
+		translate: 0 -50%;
+	}
+}
+
+.background-pattern__text {
+	flex-shrink: 0;
+	font-size: calc(69vw / 14);
+	font-weight: 900;
+	white-space: nowrap;
+	color: var(--secondary-dark);
+	writing-mode: tb-rl;
+	animation: 60s linear infinite scrolling-text;
+}
+
 #root {
 	padding: 16px;
 	min-height: 100vh;
