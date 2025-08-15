@@ -1,0 +1,5 @@
+.card-dealer {
+	width: min(100%, 300px);
+	aspect-ratio: 2/3;
+    position: relative;
+}

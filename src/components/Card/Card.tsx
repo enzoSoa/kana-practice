@@ -1,4 +1,4 @@
-import { useState, type ChangeEventHandler, type FormEvent } from 'react';
+import { useEffect, useRef, useState, type ChangeEventHandler, type FormEvent } from 'react';
 import { HoverEffect } from '..';
 import './Card.css';
 
@@ -11,6 +11,12 @@ type CardProps = {
 export function Card({kana, target, onGoodGuess}: CardProps) {
   const [inputValue, setInputValue] = useState<string>('');
   const [isGuessed, setIsGuessed] = useState<boolean>(false);
+	const inputRef = useRef<HTMLInputElement>(null)
+
+	useEffect(() => {
+		if(!inputRef.current) return;
+		setTimeout(() => inputRef.current!.focus(), 300);
+	}, [])
 
 	const handleSubmit = (event: FormEvent) => {
 		event.preventDefault();
@@ -36,6 +42,7 @@ export function Card({kana, target, onGoodGuess}: CardProps) {
         </span>
         <div className='card__footer'>
           <input 
+						ref={inputRef}
             className='card__input'
             maxLength={3}
             onChange={handleInputChange}

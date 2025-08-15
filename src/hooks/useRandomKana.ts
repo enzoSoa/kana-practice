@@ -44,10 +44,10 @@ const hiraganaToRomanji = {
   'れ': 're',
   'ろ': 'ro',
 } as const;
-const hiraganas = Object.keys(hiraganaToRomanji) as (keyof typeof hiraganaToRomanji)[];
+export type Kana = keyof typeof hiraganaToRomanji;
 
+const hiraganas = Object.keys(hiraganaToRomanji) as Kana[];
 export function useRandomKana() {
-	console.log('rendering')
 	return {
 		hiraganaToRomanji,
     getRandomKana: () => hiraganas[Math.floor(Math.random()*hiraganas.length)],
