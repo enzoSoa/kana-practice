@@ -3,12 +3,12 @@ import { HoverEffect } from '..';
 import './Card.css';
 
 type CardProps = {
-  kata: string;
+  kana: string;
   target: string;
 	onGoodGuess: () => void;
 }
 
-export function Card({kata, target, onGoodGuess}: CardProps) {
+export function Card({kana, target, onGoodGuess}: CardProps) {
   const [inputValue, setInputValue] = useState<string>('');
   const [isGuessed, setIsGuessed] = useState<boolean>(false);
 
@@ -32,7 +32,7 @@ export function Card({kata, target, onGoodGuess}: CardProps) {
         onSubmit={handleSubmit}
       >
         <span className='card__kana'>
-          {kata}
+          {kana}
         </span>
         <div className='card__footer'>
           <input 
