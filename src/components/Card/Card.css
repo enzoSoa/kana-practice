@@ -42,10 +42,11 @@
 			var(--primary-medium) 1px,
 			transparent 2px), var(--primary-light);
 	background-size: 15px 15px;
-	border: 2px dashed var(--primary-medium);
+	border: 5px solid var(--primary-medium);
+	box-shadow: 0 0 0 5px var(--primary-light);
 	display: flex;
 	align-items: center;
-	animation: 0.3s ease-out slide-in, 60s ease-in-out infinite bg-slide;
+	animation: 0.3s ease-out slide-in, 120s ease-in-out infinite bg-slide;
 	padding: 8px;
 
 	&.card--completed {
@@ -61,7 +62,7 @@
 	aspect-ratio: 1;
 	border-radius: 50%;
 	background: var(--primary-light);
-	border: 2px dashed var(--primary-medium);
+	border: 5px solid var(--primary-medium);
 	padding: 8px;
 	display: flex;
 	flex-direction: column;

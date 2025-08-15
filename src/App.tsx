@@ -1,9 +1,13 @@
-import { CardDealer } from './components'
+import { Banner, CardDealer } from './components'
 import './App.css'
 
 
 function App() {
-  return <CardDealer/>
+  return <div className='app-layout'>
+    <Banner/>
+    <CardDealer/>
+    <Banner/>
+  </div>;
 }
 
 export default App

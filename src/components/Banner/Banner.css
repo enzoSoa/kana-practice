@@ -1,0 +1,70 @@
+.banner {
+    position: relative;
+}
+
+.banner__patch {
+    position: absolute;
+    width: 48px;
+    aspect-ratio: 2/5;
+    background: var(--primary-light);
+    top: 50%;
+    left: calc(50% - min(300px, 40vw));
+    translate: 0 -50%;
+    border-radius: 48px;
+    border: 5px solid var(--primary-medium);
+    box-shadow: 0 0 0 5px var(--primary-light);
+}
+
+.banner__roll {
+    height: 56px;
+    background: var(--primary-light);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-block: 5px solid var(--primary-medium);
+    box-shadow: 0 0 0 5px var(--primary-light);
+    overflow-x: hidden;
+}
+
+@keyframes text-scroll {
+    from {
+        translate: 0 0;
+    }
+    to {
+        translate: -50% 0;
+    }
+}
+
+.banner__text {
+    animation: 180s linear infinite text-scroll;
+    font-family: "AzeretMono", monospace;
+    letter-spacing: 0.5rem;
+    font-size: 2.2rem;
+    font-weight: 800;
+    filter: drop-shadow(2px 3px 0 var(--primary-dark));
+    color: var(--primary-medium);
+    white-space: nowrap;
+    display: flex;
+}
+
+@keyframes letter-jump {
+    0% {
+        translate: 0 0;
+        scale: 1;
+    }
+    25% {
+        translate: 0 -4px;
+        scale: 1.2;
+    }
+    50% {
+        translate: 0 0;
+        scale: 1;
+    }
+}
+
+.banner__letter {
+    display: block;
+    animation: 15s infinite letter-jump;
+    animation-delay: calc(1s * var(--number));
+}
