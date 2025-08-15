@@ -1,5 +1,6 @@
 body {
 	margin: 0;
+	overflow-x: hidden;
 
 	--primary-dark: #6aaf5c;
 	--primary-medium: #9ddc87;

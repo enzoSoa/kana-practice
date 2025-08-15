@@ -10,7 +10,6 @@
 	:has(> &) {
 		box-shadow: 8px 16px 4px var(--secondary-dark);
 		transition: all 0.5s;
-		position: relative;
 	}
 
 	:has(> & .hover-effect__top-left:hover) {

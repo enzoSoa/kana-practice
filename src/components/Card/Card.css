@@ -32,7 +32,8 @@
 }
 
 .card {
-	width: min(100%, 300px);
+	position: absolute;
+	width: 100%;
 	aspect-ratio: 2/3;
 	border-radius: 8px;
 	background: linear-gradient(to bottom,
