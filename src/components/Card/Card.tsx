@@ -48,7 +48,7 @@ export function Card({kana, target, onGoodGuess}: CardProps) {
             onChange={handleInputChange}
           />
           <span className='card__label'>
-            romaji ?
+            ROMAJI?
           </span>
         </div>
       </form>

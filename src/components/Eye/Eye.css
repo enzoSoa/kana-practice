@@ -1,0 +1,21 @@
+.eye {
+    height: 32px;
+    aspect-ratio: 1;
+    border: 5px solid var(--primary-medium);
+    rotate: -45deg;
+    border-radius: 90% 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.eye__pupil {
+    width: 65%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--primary-medium);
+    border: 4px solid var(--primary-light);
+    box-shadow: 0 0 0 5px var(--primary-medium);
+    transition: all linear 0.1s;
+}

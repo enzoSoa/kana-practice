@@ -13,6 +13,11 @@
     border-radius: 48px;
     border: 5px solid var(--primary-medium);
     box-shadow: 0 0 0 5px var(--primary-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
 }
 
 .banner__roll {
@@ -40,8 +45,8 @@
     animation: 180s linear infinite text-scroll;
     font-family: "AzeretMono", monospace;
     letter-spacing: 0.5rem;
-    font-size: 2.2rem;
-    font-weight: 800;
+    font-size: 2rem;
+    font-weight: 600;
     filter: drop-shadow(2px 3px 0 var(--primary-dark));
     color: var(--primary-medium);
     white-space: nowrap;
@@ -52,19 +57,22 @@
     0% {
         translate: 0 0;
         scale: 1;
+        font-weight: 600;
     }
     25% {
         translate: 0 -4px;
         scale: 1.2;
+        font-weight: 800;
     }
     50% {
         translate: 0 0;
         scale: 1;
+        font-weight: 600;
     }
 }
 
 .banner__letter {
     display: block;
-    animation: 15s infinite letter-jump;
-    animation-delay: calc(1s * var(--number));
+    animation: 7.5s infinite letter-jump;
+    animation-delay: calc(0.5s * var(--number));
 }

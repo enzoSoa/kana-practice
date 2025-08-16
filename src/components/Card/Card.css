@@ -37,11 +37,11 @@
 	aspect-ratio: 2/3;
 	border-radius: 8px;
 	background: linear-gradient(to bottom,
-			var(--primary-medium) 1px,
+			var(--primary-medium) 3px,
 			transparent 2px), linear-gradient(to left,
-			var(--primary-medium) 1px,
+			var(--primary-medium) 3px,
 			transparent 2px), var(--primary-light);
-	background-size: 15px 15px;
+	background-size: 20px 20px;
 	border: 5px solid var(--primary-medium);
 	box-shadow: 0 0 0 5px var(--primary-light);
 	display: flex;
@@ -86,12 +86,14 @@
 }
 
 .card__label {
+	font-family: 'AzeretMono';
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 8px;
-	font-size: 0.8rem;
-	font-weight: 700;
+	font-size: 1rem;
+	font-weight: 800;
+	letter-spacing: 0.2rem;
 	filter: drop-shadow(1px 1px var(--primary-dark));
 	color: var(--primary-medium);
 }
@@ -105,7 +107,7 @@
 	text-align: center;
 	padding: 4px 8px;
 	background: transparent;
-	border: 2px dashed var(--primary-medium);
+	border: 5px dashed var(--primary-medium);
 	outline: none;
 	caret-color: var(--primary-medium);
 	z-index: 1;
